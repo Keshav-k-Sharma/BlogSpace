@@ -21,7 +21,7 @@ Write your thoughts, share your stories, or just enjoy the starry vibes ✨
 
 ## 🚀 Screenshots
 
-<img width="1920" height="1080" alt="Screenshot 2025-08-29 181545" src="https://github.com/user-attachments/assets/feda0896-4c27-4773-9bbc-c64649bda3dd" />
+<img width="900" height="0" alt="Screenshot 2025-08-29 181545" src="https://github.com/user-attachments/assets/feda0896-4c27-4773-9bbc-c64649bda3dd" />
 <img width="1920" height="1080" alt="Screenshot 2025-08-29 181557" src="https://github.com/user-attachments/assets/002ad23c-aa9b-49bd-a80d-c4352d8a48e1" />
 <img width="1920" height="1080" alt="Screenshot 2025-08-29 181610" src="https://github.com/user-attachments/assets/c147ad88-1f65-428f-9249-d6daa8417480" />
 ---
