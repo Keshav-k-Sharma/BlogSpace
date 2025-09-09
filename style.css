@@ -99,6 +99,95 @@ body {
 }
 
 
+/* Page wrapper to offset fixed header */
+.page-wrapper {
+    padding-top: 90px;
+}
+
+/* Page hero reuses star field */
+.page-hero {
+    position: relative;
+    background: #0a0a0a;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.page-hero-content {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    animation: fadeIn 1.2s ease-in;
+}
+
+.page-hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.page-hero-content p {
+    color: #aaa;
+}
+
+/* Form styles */
+.section {
+    padding: 3rem 1.5rem;
+}
+
+.blog-form {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #ddd;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #777;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+
 
 .home {
     height: 100vh;
@@ -359,4 +448,7 @@ body {
         gap: 1rem;
     }
    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }
