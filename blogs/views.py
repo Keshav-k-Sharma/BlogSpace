@@ -5,14 +5,14 @@ from rest_framework import status
 from .models import Post
 from .serializers import PostSerializer
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
-
-
-
+@method_decorator(csrf_exempt, name='dispatch')
 class PostListCreateView(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [AllowAny] 
+    permission_classes = [AllowAny]
     
 class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
