@@ -1,21 +1,38 @@
 # 🌌 BlogSpace
 
-A clean and minimal **blogging website** built with only **HTML & CSS**.  
-Write your thoughts, share your stories, or just enjoy the starry vibes ✨  
+**BlogSpace** is a clean and minimal blogging platform built with Django. It lets users write thoughts, share stories, and enjoy a responsive, starry-themed interface. Authenticated users can publish posts, while everyone can browse the public story feed.
+
+🔗 **Live Site**: [https://blogspace-2dar.onrender.com](https://blogspace-2dar.onrender.com)
 
 ---
 
 ## ✨ Features
-- 🌟 Animated starry background  
-- 📖 Blog posts with date & icons  
-- 📱 Fully responsive design  
-- 🔗 Contact links (Email, Instagram, GitHub, LinkedIn)  
+
+- 🔐 Google OAuth login via `django-allauth`
+- 📝 Authenticated writing interface (`/write/`)
+- 📖 Public story feed (`/stories/`)
+- 🎨 Responsive design with custom button styling
+- 🌠 Optional animated starry background
+- ⚙️ Production-ready deployment with static file serving via WhiteNoise
 
 ---
 
-## 📂 Files
-- `index.html` → Website structure  
-- `style.css` → Styling & animations  
+## 🛠️ Tech Stack
+
+| Layer         | Tools Used                          |
+|---------------|-------------------------------------|
+| Backend       | Django, Python                      |
+| Auth          | django-allauth + Google OAuth       |
+| Frontend      | HTML, CSS, JavaScript               |
+| Deployment    | Render                              |
+| Static Files  | WhiteNoise                          |
+| Version Control | Git + GitHub                      |
+
+---
+🔹 1. Clone the Repository
+
+git clone https://github.com/Keshav-k-Sharma/BlogSpace.git
+cd blogspace
 
 ---
 
