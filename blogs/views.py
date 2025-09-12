@@ -22,7 +22,7 @@ def write(request):
         title = request.POST.get('title')
         content = request.POST.get('content')
         Post.objects.create(title=title, content=content)
-        return redirect('home')
+        return redirect('index')
     return render(request, 'write.html')
 
 def stories(request):
