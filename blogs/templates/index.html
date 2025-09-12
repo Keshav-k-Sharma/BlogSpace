@@ -19,8 +19,12 @@
                 <a href="#contact">Contacts</a>
             </div>
             <div class="auth-buttons">
-                <a href="#" class="btn btn-ghost">Sign In</a>
-                <a href="{% url 'write' %}" class="btn btn-primary">Write</a>
+                <a href="/accounts/google/login/" class="btn btn-signup">Sign In</a>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'write' %}">Write</a></li>
+                {% else %}
+                <li><a href="/accounts/login/">Login to Write</a></li>
+                {% endif %}
             </div>
         </nav>
     </header>

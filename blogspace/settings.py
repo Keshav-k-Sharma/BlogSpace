@@ -44,6 +44,18 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'blogs',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+]
+
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +73,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'blogspace.urls'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+LOGIN_REDIRECT_URL = '/write/'
 
 TEMPLATES = [
     {

@@ -3,6 +3,7 @@ from rest_framework.permissions import AllowAny
 from .models import Post
 from .serializers import PostSerializer
 from django.shortcuts import render , redirect
+from django.contrib.auth.decorators import login_required
 
 # --------------------------
 # API Views (for JSON access)
@@ -25,16 +26,14 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
 def index(request):
     return render(request, "index.html")
 
+@login_required(login_url='/accounts/login/')
 def write(request):
     if request.method == 'POST':
         title = request.POST.get('title')
         content = request.POST.get('content')
-        Post.objects.create(title=title, content=content)
-        return redirect('index')  # must match name in urls.py
+        # Save post logic here
+        return redirect('index')
     return render(request, 'write.html')
-
-
-
 
 
 def stories(request):

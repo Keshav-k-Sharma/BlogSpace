@@ -1,6 +1,8 @@
 
 from django.urls import path
 from .import views 
+from django.urls import path, include
+
 
 urlpatterns = [
     path('posts/', views.PostListCreateView.as_view(), name='post-list-create'),
@@ -8,6 +10,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('write/', views.write, name='write'),
     path('stories/', views.stories, name='stories'),
+    path('accounts/', include('allauth.urls')),
 ]
 
 
