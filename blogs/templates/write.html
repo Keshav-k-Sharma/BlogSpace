@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write • BlogSpace</title>
+    <link rel="stylesheet" href="{% static 'blogs/style.css' %}">
+    <link rel="icon" href="data:,">
+    <meta name="description" content="Write a new story on BlogSpace">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="nav">
+    <a href="{% url 'index' %}" class="logo">BlogSpace</a>
+    <div class="nav-links">
+      <a href="{% url 'index' %}">Home</a>
+      <a href="{% url 'stories' %}">Stories</a>
+      <a href="{% url 'index' %}#contact">Contact</a>
+    </div>
+    <div class="auth-buttons">
+      <a href="#" class="btn btn-ghost">Sign In</a>
+      <a href="{% url 'write' %}" class="btn btn-primary">Write</a>
+    </div>
+    </nav>
+    </header>
+
+    <main class="page-wrapper">
+        <section class="page-hero">
+            <div class="stars">
+                <div class="star star-1"></div>
+                <div class="star star-2"></div>
+                <div class="star star-3"></div>
+                <div class="star star-4"></div>
+                <div class="star star-5"></div>
+                <div class="star star-6"></div>
+                <div class="star star-7"></div>
+                <div class="star star-8"></div>
+                <div class="star star-9"></div>
+                <div class="star star-10"></div>
+                <div class="star star-11"></div>
+                <div class="star star-12"></div>
+                <div class="star star-13"></div>
+                <div class="star star-14"></div>
+                <div class="star star-15"></div>
+                <div class="star star-16"></div>
+                <div class="star star-17"></div>
+                <div class="star star-18"></div>
+                <div class="star star-19"></div>
+                <div class="star star-20"></div>
+            </div>
+            <div class="page-hero-content">
+                <h1>Write a Story</h1>
+                <p>Share your thoughts with the world</p>
+            </div>
+        </section>
+        <section class="container section">
+        <form class="blog-form" method="POST" action="{% url 'post-list-create' %}">
+            {% csrf_token %}
+    
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" placeholder="Give your story a title" required>
+                </div>
+                <div class="form-group">
+                    <label for="icon">Icon (emoji)</label>
+                    <input type="text" name="icon" id="icon" placeholder="e.g. 🚀 or 🔥" maxlength="2">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                <div class="form-group">
+                    <label for="read_time">Read Time (minutes)</label>
+                    <input type="number" name="read_time" id="read_time" min="1" placeholder="5">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Your Story</label>
+                <textarea name="content" id="content" placeholder="Start writing here..." rows="6"></textarea>
+            </div>
+
+            <div class="form-buttons">
+                <button id="publish-btn" type="button" class="btn btn-primary">Publish</button>
+                <a href="{% url 'stories' %}" class="btn btn-ghost">Preview Stories</a>
+            </div>
+        </form>
+        </section>
+        
+   </main>
+    <footer class="contact" id="contact">
+        <div class="container">
+            <h2>Contacts</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <a href="mailto:ks2838@srmist.edu.in">
+                        <span>📧</span>
+                        <span> G-MAIL</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://www.instagram.com/_.kesh4v_/">
+                        <span>📸</span>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://github.com/Keshav-k-Sharma">
+                        <span>🐙</span>
+                        <span>Github</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://www.linkedin.com/in/keshav-k-sharma">
+                        <span>💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
+  document.getElementById('publish-btn').addEventListener('click', async function (e) {
+    e.preventDefault();
+
+    const title = document.getElementById('title').value;
+    const icon = document.getElementById('icon').value || '🔥';
+    const date = document.getElementById('date').value || new Date().toISOString().slice(0, 10);
+    const readtime = document.getElementById('read_time').value || 5;
+    const content = document.getElementById('content').value;
+
+    const payload = {
+      title,
+      icon,
+      date,
+      read_time: Number(readtime),
+      content,
+    };
+
+    const res = await fetch('http://127.0.0.1:8000/api/posts/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': getCookie('csrftoken'),
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (res.ok) {
+      window.location.href = "{% url 'stories' %}";
+    } else {
+      const error = await res.json();
+      alert(`Error: ${error.detail || 'Could not publish story.'}`);
+    }
+  });
+</script>
+  
+</body>
+</html>
+

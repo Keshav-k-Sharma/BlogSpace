@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogSpace- A platform to share your thoughts made purely with html and css. </title>
+    <link rel="stylesheet" href="{% static 'blogs/style.css' %}">
+</head>
+
+<body>
+    
+     <header class="header">
+        <nav class="nav">
+            <a href="{% url 'index' %}" class="logo">BlogSpace</a>
+            <div class="nav-links">
+                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'stories' %}">Stories</a>
+                <a href="#contact">Contacts</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-ghost">Sign In</a>
+                <a href="{% url 'write' %}" class="btn btn-primary">Write</a>
+            </div>
+        </nav>
+    </header>
+
+
+    
+    <section class="home" id="home">
+        
+        <div class="stars">
+            <div class="star star-1"></div>
+            <div class="star star-2"></div>
+            <div class="star star-3"></div>
+            <div class="star star-4"></div>
+            <div class="star star-5"></div>
+            <div class="star star-6"></div>
+            <div class="star star-7"></div>
+            <div class="star star-8"></div>
+            <div class="star star-9"></div>
+            <div class="star star-10"></div>
+            <div class="star star-11"></div>
+            <div class="star star-12"></div>
+            <div class="star star-13"></div>
+            <div class="star star-14"></div>
+            <div class="star star-15"></div>
+            <div class="star star-16"></div>
+            <div class="star star-17"></div>
+            <div class="star star-18"></div>
+            <div class="star star-19"></div>
+            <div class="star star-20"></div>
+        </div>
+
+        
+        <div class="home-content">
+            <h1>Welcome to BlogSpace</h1>
+            <p>A place to share thoughts and stories</p>
+            <div class="buttons">
+            <a href="{% url 'write' %}" class="btn btn-primary">Start Writing</a>
+            <a href="{% url 'stories' %}" class="btn btn-ghost">Read Stories</a>
+        </div>
+
+
+    </section>
+
+    
+    <section class="blogs" id="blogs">
+        <div class="container">
+            <h2>Recent Posts</h2>
+            
+            
+            <article class="blog-post">
+                <div class="blog-icon">💻</div>
+                <div class="blog-content">
+                    <h3>Learning Web Development</h3>
+                    <p class="date">March 15, 2024 • 5 min read</p>
+                    <p>Starting your journey in web development can be exciting. Here's what I learned in my first month of coding and building websites...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            
+            <article class="blog-post">
+                <div class="blog-icon">🎨</div>
+                <div class="blog-content">
+                    <h3>Simple Design Tips</h3>
+                    <p class="date">March 12, 2024 • 3 min read</p>
+                    <p>Sometimes less is more. Here are some tips for creating clean, beautiful designs that work well and look professional...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            
+            <article class="blog-post">
+                <div class="blog-icon">🌙</div>
+                <div class="blog-content">
+                    <h3>Night Mode Everything</h3>
+                    <p class="date">March 10, 2024 • 4 min read</p>
+                    <p>Why dark themes are easier on the eyes and how to implement them in your projects. A guide to better user experience...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    
+    <footer class="contact" id="contact">
+        <div class="container">
+            <h2>Contacts</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                <a href="mailto:ks2838@srmist.edu.in">
+                    <span>📧</span>
+                    <span> G-MAIL</span>
+                </a>
+                </div>
+                
+            <div class="contact-item">
+                <a href="https://www.instagram.com/_.kesh4v_/">
+                        <span>📸</span>
+                        <span>Instagram</span>
+                </a>
+            </div>
+
+            <div class="contact-item">
+            <a href="https://github.com/Keshav-k-Sharma">
+                <span>🐙</span>
+                <span>Github</span>
+            </a>
+            </div>
+
+            <div class="contact-item">
+            <a href="https://www.linkedin.com/in/keshav-k-sharma">
+                <span>💼</span>
+                <span>LinkedIn</span>
+            </a>
+            </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
