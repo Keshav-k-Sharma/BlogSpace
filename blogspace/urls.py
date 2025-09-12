@@ -21,4 +21,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blogs.urls')),  # This connects to your real views
+    path('api/', include('blogs.urls')),
 ]
