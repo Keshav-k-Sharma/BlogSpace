@@ -91,6 +91,12 @@ DATABASES = {
     }
 }
 
+CORS_ALLOWED_ORIGINS = [
+    "https://blogspace-2dar.onrender.com",  # or "*" for testing
+]
+CORS_ALLOW_ALL_ORIGINS = True
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

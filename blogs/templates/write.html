@@ -159,7 +159,7 @@
       content,
     };
 
-    const res = await fetch('/api/posts/', {
+    const res = await fetch("https://blogspace-2dar.onrender.com/api/posts/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -169,7 +169,7 @@
     });
 
     if (res.ok) {
-      window.location.href = "{% url 'stories' %}";
+      window.location.href = "https://blogspace-2dar.onrender.com/stories/"
     } else {
       const error = await res.json();
       alert(`Error: ${error.detail || 'Could not publish story.'}`);

@@ -1,32 +1,42 @@
 from rest_framework import generics
-from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
-from rest_framework import status
 from .models import Post
 from .serializers import PostSerializer
-from django.shortcuts import render, redirect
-from django.views.decorators.csrf import csrf_exempt
-from django.utils.decorators import method_decorator
+from django.shortcuts import render , redirect
 
-@method_decorator(csrf_exempt, name='dispatch')
+# --------------------------
+# API Views (for JSON access)
+# --------------------------
 class PostListCreateView(generics.ListCreateAPIView):
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by("-id")
     serializer_class = PostSerializer
     permission_classes = [AllowAny]
-    
+
+
 class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    permission_classes = [AllowAny]
+
+
+# --------------------------
+# Template Views (for frontend pages)
+# --------------------------
+def index(request):
+    return render(request, "index.html")
+
 def write(request):
     if request.method == 'POST':
         title = request.POST.get('title')
         content = request.POST.get('content')
         Post.objects.create(title=title, content=content)
-        return redirect('index')
+        return redirect('index')  # must match name in urls.py
     return render(request, 'write.html')
 
+
+
+
+
 def stories(request):
-    return render(request, 'stories.html')
-def index(request):
-    return render(request, 'index.html')
+    return render(request, "stories.html")
 
