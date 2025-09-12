@@ -17,14 +17,9 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView # <-- Import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('blogs.urls')), # Your API endpoint
-
-    # Add these paths to serve your HTML pages
-    path('', TemplateView.as_view(template_name='index.html'), name='home'),
-    path('stories/', TemplateView.as_view(template_name='stories.html'), name='stories'),
-    path('write/', TemplateView.as_view(template_name='write.html'), name='write'),
+    path('', include('blogs.urls')),  # This connects to your real views
+    path('api/', include('blogs.urls')),  # If you're using DRF endpoints
 ]
