@@ -32,13 +32,17 @@
 🔹 1. Clone the Repository
 
 git clone https://github.com/Keshav-k-Sharma/BlogSpace.git
-cd blogspace
+
 
 ---
 
 ## 🚀 Screenshots
 
 <img width="1920" height="1080" alt="Screenshot 2025-08-29 181545" src="https://github.com/user-attachments/assets/feda0896-4c27-4773-9bbc-c64649bda3dd" />
+<img width="1920" height="1080" alt="Screenshot 2025-09-12 234902" src="https://github.com/user-attachments/assets/f9db0e44-16e4-4f9c-8775-4f4e050ffe16" />
+
+<<img width="1920" height="1080" alt="Screenshot 2025-09-12 234916" src="https://github.com/user-attachments/assets/28897b25-0903-48fc-a8b2-573417ef33b8" />
+
 <img width="1920" height="1080" alt="Screenshot 2025-08-29 181557" src="https://github.com/user-attachments/assets/002ad23c-aa9b-49bd-a80d-c4352d8a48e1" />
 <img width="1920" height="1080" alt="Screenshot 2025-08-29 181610" src="https://github.com/user-attachments/assets/c147ad88-1f65-428f-9249-d6daa8417480" />
 ---
