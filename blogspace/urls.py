@@ -24,7 +24,7 @@ urlpatterns = [
     path('api/', include('blogs.urls')), # Your API endpoint
 
     # Add these paths to serve your HTML pages
-    path('', TemplateView.as_view(template_name='blogs/templates/index.html'), name='home'),
-    path('stories/', TemplateView.as_view(template_name='blogs/stories.html'), name='stories'),
-    path('write/', TemplateView.as_view(template_name='blogs/write.html'), name='write'),
+    path('', TemplateView.as_view(template_name='index.html'), name='home'),
+    path('stories/', TemplateView.as_view(template_name='stories.html'), name='stories'),
+    path('write/', TemplateView.as_view(template_name='write.html'), name='write'),
 ]
